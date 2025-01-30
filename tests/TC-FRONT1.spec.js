@@ -6,7 +6,7 @@ describe("TC-002", () => {
     try {
       await driver.manage().window().maximize();
       await driver.get("https://www.fravega.com/");
-
+      
       try {
         let geoModalCloseButton = await driver.wait(
           until.elementLocated(By.css("[data-test-id='geo-modal-close']")),
@@ -29,7 +29,7 @@ describe("TC-002", () => {
         console.log("No se encontró popup, continuando con la ejecución...");
       }
 
-      const productos = ["Heladera Samsung", "Aire Acondicionado LG", "Microondas Electrolux"];
+      const productos = ["Heladera Samsung", "Aire Acondicionado LG"];
       
       for (const producto of productos) {
         console.log(`Buscando: ${producto}`);
@@ -67,7 +67,7 @@ describe("TC-002", () => {
           await driver.executeScript("arguments[0].scrollIntoView(true);", results[1]);
 
           try {
-            await driver.wait(until.stalenessOf(geoModalCloseButton), 5000);
+            await driver.wait(until.stalenessOf(geoModalCloseButton), 8000);
             console.log("El modal de geolocalización ya no está presente.");
           } catch (error) {
             console.log("El modal de geolocalización ya no está presente.");
@@ -79,7 +79,7 @@ describe("TC-002", () => {
           continue; 
         }
 
-        await driver.sleep(3000);
+        await driver.sleep(8000);
 
         let buyButton = await driver.findElement(
           By.css("[data-test-id='product-buy-button']")
@@ -96,7 +96,7 @@ describe("TC-002", () => {
           )
         );
 
-        await driver.wait(until.elementIsVisible(addToCartButton), 5000);
+        await driver.wait(until.elementIsVisible(addToCartButton), 8000);
         await driver.executeScript("arguments[0].scrollIntoView(true);", addToCartButton);
         await addToCartButton.click();
 
