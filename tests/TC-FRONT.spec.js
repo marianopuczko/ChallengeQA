@@ -54,7 +54,7 @@ describe("TC-001", () => {
         throw new Error("El producto no tiene stock");
       }
 
-      await driver.sleep(3000);
+      await driver.sleep(5000);
 
       // Agregar al carrito
       let addToCartButton = await driver.findElement(
@@ -71,7 +71,7 @@ describe("TC-001", () => {
       );
       await cartIcon.click();
 
-      await driver.sleep(3000);
+      await driver.sleep(5000);
 
       let goCart = await driver.findElement(
         By.css("[data-test-id='link-go-to-cart']")
