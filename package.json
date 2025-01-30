@@ -1,0 +1,22 @@
+{
+  "name": "desafio_fv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test-front1": "mocha ./tests/TC-FRONT.spec.js --no-timeouts",
+    "test-back": "mocha ./tests/TC-BACK.spec.js --no-timeouts",
+    "test-front2": "mocha ./tests/TC-FRONT1.spec.js --no-timeouts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "chai": "^5.1.2",
+    "mocha": "^11.1.0",
+    "selenium-webdriver": "^4.28.1",
+    "webdriver-manager": "^12.1.9"
+  }
+}
