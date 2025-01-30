@@ -34,6 +34,7 @@ describe("Pruebas de API GoRest- Usuarios", () => {
       });
 
       expect(response.status).to.equal(200);
+      console.log(response.data)
     });
 
 //Obtenemos el detalle de un usuario
